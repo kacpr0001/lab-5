@@ -30,3 +30,18 @@ def test_if_tenants_have_valid_apartment_keys():
 
     manager.tenants['tenant-1'].apartment = 'invalid-key'
     assert manager.check_tenants_apartment_keys() == False
+    
+
+def test():
+    parameters = Parameters()
+    manager = Manager(parameters)
+    assert manager.get_apartment_costs(apartment_key="xyz", year=1, month=1) == None
+    assert manager.get_apartment_costs(apartment_key="apart-polanka", year=1, month=1) == 0
+    assert manager.get_apartment_costs(apartment_key="apart-polanka", year=2025, month=1) == 910
+    
+    
+        
+        
+# "settlement_year": 2025,
+#        "settlement_month": 1,
+ #       "apartment": "apart-polanka", 
